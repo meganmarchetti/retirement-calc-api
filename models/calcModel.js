@@ -5,35 +5,41 @@ module.exports = (sequelize, DataTypes) => {
     // modelName is 'customer' (first argument of define() function)
     // When synced, this will create a table name of "modelName" + "s", i.e. "customers"
     const Calc = sequelize.define('calc', {
-        user_id: { // the id will be our primary key for accessing customer data
+        id: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            primaryKey: true,
+            allowNull: false
+        },
+        
+        yrlyIncome: { 
+            type: DataTypes.DECIMAL(18,2),
+            allowNull: false
+        },
+        currAge: { 
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        retAge: { 
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        monthlyCont: { 
+            type: DataTypes.DECIMAL(18,2),
+            allowNull: false
+        },
+        savBalance: { 
+            type: DataTypes.DECIMAL(18,2),
+            allowNull: false
+        },
+        retAccVal: { 
+            type: DataTypes.DECIMAL(18,2),
+            allowNull: false
+        },
+        userId: { 
             type: DataTypes.INTEGER,
             // autoIncrement: true,
             allowNull: false,
-            primaryKey: true
-        },
-        yrly_income: { 
-            type: DataTypes.DECIMAL(18,2),
-            allowNull: false
-        },
-        curr_age: { 
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        ret_age: { 
-            type: DataTypes.INTEGER,
-            allowNull: false
-        },
-        monthly_cont: { 
-            type: DataTypes.DECIMAL(18,2),
-            allowNull: false
-        },
-        sav_balance: { 
-            type: DataTypes.DECIMAL(18,2),
-            allowNull: false
-        },
-        ret_acc_val: { 
-            type: DataTypes.DECIMAL(18,2),
-            allowNull: false
         }
     })
 

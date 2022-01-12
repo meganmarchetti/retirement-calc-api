@@ -35,6 +35,7 @@ db.sequelize.sync({ force: false }).then(() => {
     console.log('Error syncing the DB to sequelize' + error);
 });
 
+
 db.Calcs.belongsTo(db.Users);
 db.Users.hasOne(db.Calcs);
 

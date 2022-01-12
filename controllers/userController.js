@@ -3,7 +3,7 @@ const User = db.Users;
 
 const addUser = async(req, res) => {
     let input_data = {
-        user_id: req.body.user_id,
+        id: req.body.id,
         name: req.body.name
     };
     const user = await User.create(input_data);
@@ -21,18 +21,18 @@ const getAllUsers = async (req, res) => {
 const getOneUser = async (req, res) => {
 
     // getting the id from the params in the req
-    let user_id = req.params.user_id
+    let id = req.params.id
     
     // using the builtin 'findOne' function on Customer Model
-    let users = await User.findOne({where: {user_id: user_id}})
+    let users = await User.findOne({where: {id: id}})
     res.status(200).send(users)
 };
 
 const updateUser = async (req, res) => {
-    let user_id = req.params.user_id
+    let id = req.params.id
 
     // using the builtin 'update' function on Customer Model
-    const user = await User.update(req.body, { where: {user_id: user_id}})
+    const user = await User.update(req.body, { where: {id: id}})
     res.status(200).send(user)
 };
 

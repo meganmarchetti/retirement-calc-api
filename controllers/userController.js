@@ -13,7 +13,7 @@ const addUser = async(req, res) => {
 
 const getAllUsers = async (req, res) => {
 
-    // using the builtin 'findOne' function on Customer Model
+    // using the builtin 'findOne' function on Model
     let users = await User.findAll({})
     res.status(200).send(users)
 };  
@@ -23,7 +23,7 @@ const getOneUser = async (req, res) => {
     // getting the id from the params in the req
     let id = req.params.id
     
-    // using the builtin 'findOne' function on Customer Model
+    // using the builtin 'findOne' function on Model
     let users = await User.findOne({where: {id: id}})
     res.status(200).send(users)
 };
@@ -31,23 +31,15 @@ const getOneUser = async (req, res) => {
 const updateUser = async (req, res) => {
     let id = req.params.id
 
-    // using the builtin 'update' function on Customer Model
+    // using the builtin 'update' function on Model
     const user = await User.update(req.body, { where: {id: id}})
     res.status(200).send(user)
 };
 
-// const deleteCustomer = async (req, res) => {
-//     let id = req.params.id
-
-//     // using the builtin 'destroy' function on Customer Model
-//     await Customer.destroy({where :{id: id}})
-//     res.status(200).send(`customer with id: ${id} is deleted`)
-// };
 
 module.exports = {
     addUser,
     getAllUsers,
     getOneUser,
-    updateUser,
-    // deleteCustomer
+    updateUser
 };

@@ -1,9 +1,7 @@
-// inputs: sequelize instance and DT Class, returns: a Customer Model object
+
 module.exports = (sequelize, DataTypes) => {
 
     // Define a new model, representing a table in the database.
-    // modelName is 'customer' (first argument of define() function)
-    // When synced, this will create a table name of "modelName" + "s", i.e. "customers"
     const Calc = sequelize.define('calc', {
         id: {
             type: DataTypes.INTEGER,
@@ -22,11 +20,16 @@ module.exports = (sequelize, DataTypes) => {
         },
         retAge: { 
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: false,
         },
         monthlyCont: { 
             type: DataTypes.DECIMAL(18,2),
             allowNull: false
+        },
+        rateReturn: {
+            type: DataTypes.DECIMAL(5,2),
+            allowNull: false,
+
         },
         savBalance: { 
             type: DataTypes.DECIMAL(18,2),
@@ -34,11 +37,11 @@ module.exports = (sequelize, DataTypes) => {
         },
         retAccVal: { 
             type: DataTypes.DECIMAL(18,2),
-            allowNull: false
+            allowNull: true,
+
         },
         userId: { 
             type: DataTypes.INTEGER,
-            // autoIncrement: true,
             allowNull: false,
         }
     })

@@ -9,6 +9,5 @@ router.get("/:id", calcController.getOneCalc);
 
 router.put("/:id", calcController.updateCalc);
 
-// router.delete("/:id", calcController.deleteCustomer);
 
 module.exports = router;

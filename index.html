@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retirement Calculator</title>
+</head>
+<body>
+    <div class="main" id="main">
+        <h1>Retirement Calculator</h1>
+    </div>
+    <form action="/retcalc" method="post">
+        <input type="text" name="yrlyIncome" placeholder="Annual Income Pre-Tax">
+        <br>
+        <input type="text" name="currAge" placeholder="Current Age">
+        <br>
+        <input type="text" name="retAge" placeholder="Retirement Age">
+        <br>
+        <input type="text" name="monthlyCont" placeholder="Monthly Contribution">
+        <br>
+        <input type="text" name="savBalance" placeholder="Current Savings Balance">
+        <br>
+        <button class="btn" type="submit">Calculate</button>
+        <br>
+    </form>
+</body>
+</html>
